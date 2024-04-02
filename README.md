@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/E1vcEWuv)
 # Divide and Conquer Sum
 
 In the lectures, we've covered merge sort, which uses a divide-and-conquer
@@ -25,3 +26,15 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+The recurance relation for the asymtotic complexity is as follows:
+ if n<=3  $\implies$ T(n) = 1 since we just add all elements in one step.
+ if  n>3  $\implies$ T(n) = 3T(n/3) since we split the original array into 3 sublist 
+ and perform the function on each sublist. 
+
+T(n) = 3T(n/3)
+= 3(3T(n/9))    /* Substituting T(n) */
+= 3^2(T(n/3^2)) /* Here we see a pattern start to form */
+= 3^i(T(n/3^i)) /* where i = log(n) */
+= nT(1) $\implies$ $\Theta$(n)
+Thus the asymtotic complexity bounded by $\Theta$ is $\Theta$(n)
